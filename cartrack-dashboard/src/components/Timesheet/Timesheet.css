@@ -1,0 +1,439 @@
+.timesheet {
+    padding: 1rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.page-title {
+    color: var(--text-primary);
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+}
+
+.timesheet-controls {
+    margin-bottom: 20px;
+}
+
+.day-section {
+    background: white;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.day-title {
+    margin: 0 0 15px 0;
+    color: #333;
+}
+
+.table-modern {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.table-modern th {
+    text-align: left;
+    padding: 12px;
+    background: #f8f9fa;
+    border-bottom: 2px solid #dee2e6;
+    font-weight: 500;
+}
+
+.table-modern td {
+    padding: 12px;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.trip-type {
+    display: inline-block;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.9em;
+}
+
+.gap-period {
+    background: #f8f9fa;
+}
+
+.gap-info {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 10px;
+}
+
+.gap-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #666;
+}
+
+.gap-icon {
+    font-size: 1.1em;
+}
+
+.gap-tickets {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.ticket-list {
+    display: flex;
+    gap: 5px;
+    flex-wrap: wrap;
+}
+
+.ticket-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    background: #e9ecef;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 0.9em;
+}
+
+.remove-ticket {
+    border: none;
+    background: none;
+    color: #666;
+    cursor: pointer;
+    padding: 0 2px;
+    font-size: 1.2em;
+    line-height: 1;
+}
+
+.remove-ticket:hover {
+    color: #dc3545;
+}
+
+.add-ticket {
+    flex: 1;
+}
+
+.input-modern {
+    width: 100%;
+    padding: 8px 12px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    font-size: 0.9em;
+}
+
+.input-modern.assigned {
+    border-color: #28a745;
+    background-color: #f8fff9;
+}
+
+.select-modern {
+    width: 100%;
+    padding: 8px 12px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    font-size: 0.9em;
+    background-color: white;
+}
+
+.select-modern.assigned {
+    border-color: #28a745;
+    background-color: #f8fff9;
+}
+
+tr.assigned {
+    background-color: #f8fff9;
+}
+
+/* Input and Select Styling */
+.select-modern,
+.input-modern {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    font-size: 0.813rem;
+    color: var(--text-primary);
+    background: var(--surface);
+    transition: all 0.2s ease;
+}
+
+.select-modern:hover,
+.input-modern:hover {
+    border-color: #94a3b8;
+}
+
+.select-modern:focus,
+.input-modern:focus {
+    outline: none;
+    border-color: #60a5fa;
+    box-shadow: 0 0 0 2px rgba(96, 165, 250, 0.1);
+}
+
+.select-modern.assigned,
+.input-modern.assigned {
+    border-color: #10b981;
+    background: rgba(16, 185, 129, 0.05);
+}
+
+/* Process Button */
+.btn {
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: none;
+}
+
+.btn-primary {
+    background: #3b82f6;
+    color: white;
+}
+
+.btn-primary:hover {
+    background: #2563eb;
+}
+
+.btn-secondary {
+    background: #e2e8f0;
+    color: #64748b;
+}
+
+.btn-secondary:hover {
+    background: #cbd5e1;
+}
+
+.btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* Loading and Error States */
+.loading {
+    padding: 2rem;
+    text-align: center;
+    color: var(--text-secondary);
+}
+
+.error {
+    padding: 1rem;
+    margin: 1rem 0;
+    border-radius: 6px;
+    background: #fee2e2;
+    color: #991b1b;
+    font-size: 0.875rem;
+}
+
+/* Gap period styling - improved */
+.gap-period {
+    background: var(--surface);
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+}
+
+.gap-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    padding: 1rem;
+    background: rgba(0,0,0,0.02);
+    border-radius: 8px;
+    margin: 0.5rem 1rem;
+    border: 1px solid var(--border);
+}
+
+.gap-header {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--text-primary);
+    font-weight: 500;
+}
+
+.gap-icon {
+    color: #64748b;
+    font-size: 1.125rem;
+}
+
+/* Ticket management section */
+.gap-tickets {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    padding-left: 1.75rem;
+}
+
+.ticket-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    min-height: 32px;
+}
+
+.ticket-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.375rem 0.75rem;
+    background: var(--surface);
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    font-size: 0.813rem;
+    color: var(--text-primary);
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+
+.remove-ticket {
+    background: none;
+    border: none;
+    color: #94a3b8;
+    cursor: pointer;
+    padding: 0;
+    font-size: 1rem;
+    line-height: 1;
+    transition: all 0.2s ease;
+}
+
+.remove-ticket:hover {
+    color: #ef4444;
+}
+
+.add-ticket {
+    width: 100%;
+    max-width: 300px;
+}
+
+.add-ticket .input-modern {
+    width: 100%;
+    padding: 0.5rem 0.75rem;
+    font-size: 0.875rem;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    background: white;
+    transition: all 0.2s ease;
+}
+
+.add-ticket .input-modern:hover {
+    border-color: #cbd5e1;
+}
+
+.add-ticket .input-modern:focus {
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+    outline: none;
+}
+
+/* Add placeholder styling when no tickets */
+.ticket-list:empty::before {
+    content: 'No tickets assigned';
+    color: #94a3b8;
+    font-style: italic;
+    font-size: 0.875rem;
+    padding: 0.5rem 0;
+}
+
+/* Improve table row transitions */
+.table-modern tr {
+    transition: all 0.2s ease;
+}
+
+.table-modern tr:hover {
+    background: rgba(0,0,0,0.01);
+}
+
+.table-modern tr.assigned {
+    background: rgba(var(--color-success), 0.04);
+}
+
+.table-modern tr.gap-period:hover {
+    background: rgba(0,0,0,0.02);
+}
+
+/* Make gap periods more subtle */
+.gap-period td {
+    padding: 0.25rem 1rem;
+}
+
+.gap-info {
+    font-style: italic;
+    color: #64748b;
+}
+
+.gap-tickets {
+    margin-top: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.ticket-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.ticket-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    padding: 0.25rem 0.5rem;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    font-size: 0.75rem;
+    color: var(--text-primary);
+}
+
+.remove-ticket {
+    background: none;
+    border: none;
+    color: var(--text-secondary);
+    cursor: pointer;
+    padding: 0 0.25rem;
+    font-size: 1rem;
+    line-height: 1;
+}
+
+.remove-ticket:hover {
+    color: var(--text-primary);
+}
+
+.add-ticket {
+    width: 200px;
+}
+
+.add-ticket .input-modern {
+    width: 100%;
+    padding: 0.375rem 0.5rem;
+    font-size: 0.75rem;
+}
+
+.processed {
+    background-color: var(--background-alt);
+}
+
+.processed-entry {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.status-badge {
+    font-size: 0.75rem;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    background: var(--success-light);
+    color: var(--success);
+}
+
+.processed .ticket-number {
+    opacity: 0.8;
+}
+
+.processed .engineer-name {
+    opacity: 0.8;
+} 

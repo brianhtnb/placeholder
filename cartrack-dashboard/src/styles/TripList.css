@@ -1,0 +1,42 @@
+.trip-list input {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    font-size: 0.9rem;
+}
+
+.trip-list input:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 2px rgba(33, 150, 243, 0.1);
+}
+
+.merged-trips-details {
+    background-color: rgba(0, 0, 0, 0.02);
+}
+
+.merged-trips-container {
+    padding: 1rem;
+    border-left: 3px solid var(--primary);
+}
+
+.merged-trip {
+    display: grid;
+    grid-template-columns: 150px 100px 1fr 100px;
+    gap: 1rem;
+    padding: 0.5rem;
+    border-bottom: 1px solid var(--border);
+}
+
+.merged-trip:last-child {
+    border-bottom: none;
+}
+
+tr {
+    transition: background-color 0.2s ease;
+}
+
+tr:hover {
+    filter: brightness(0.95);
+} 

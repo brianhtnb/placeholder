@@ -1,0 +1,58 @@
+:root {
+  /* Color palette */
+  --primary-bg: #f8fafc;
+  --surface: #ffffff;
+  --text-primary: #1e293b;
+  --text-secondary: #64748b;
+  --border: #e2e8f0;
+  
+  /* Trip type colors - very subtle */
+  --office-to-office: rgba(76, 175, 80, 0.08);
+  --office-to-client: rgba(33, 150, 243, 0.08);
+  --client-to-office: rgba(255, 152, 0, 0.08);
+  --client-to-client: rgba(156, 39, 176, 0.08);
+  --personal: rgba(244, 67, 54, 0.08);
+  --unknown: rgba(158, 158, 158, 0.08);
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--primary-bg);
+  color: var(--text-primary);
+}
+
+/* Modern scrollbar for all components */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--text-secondary) var(--primary-bg);
+}
+
+*::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+*::-webkit-scrollbar-track {
+  background: var(--primary-bg);
+  border-radius: 4px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: var(--text-secondary);
+  border-radius: 4px;
+  opacity: 0.5;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  opacity: 0.8;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
